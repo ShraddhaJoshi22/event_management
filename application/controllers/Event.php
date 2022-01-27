@@ -22,17 +22,12 @@ class Event extends CI_Controller
 		if (!empty($id)) {
 			$data['eventDetails'] = $this->Event_model->getData(array('id' => $id), true);
 		}
-		// echo "<pre>";
-		// print_r($data);
-		// die;
+
 		$this->load->view('event_manage', $data);
 	}
 
 	public function save($id = '')
 	{
-		// echo "<pre>";
-		// print_r($_POST);
-		// die;
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('title', 'Event Title', 'required|min_length[4]');
@@ -49,8 +44,8 @@ class Event extends CI_Controller
 			$insertArr['recurrence_type'] = $this->input->post('recurrence_type');
 
 			if ($insertArr['recurrence_type'] == 1) {
-				$insertArr['type1_recurrence_at'] = $this->input->post('end_date');
-				$insertArr['end_date'] = $this->input->post('end_date');
+				$insertArr['type1_recurrence_at'] = $this->input->post('type1_recurrence_at');
+				$insertArr['type1_duration'] = $this->input->post('type1_duration');
 			} else {
 				$insertArr['type2_recurrence_at'] = $this->input->post('type2_recurrence_at');
 				$insertArr['type2_day'] = $this->input->post('type2_day');
@@ -58,14 +53,10 @@ class Event extends CI_Controller
 			}
 
 			if (isset($id) && !empty($id)) {
-				// echo "<pre>";
-				// print_r($insertArr);
-				// die;
 				$value = $this->Event_model->updateData($insertArr, $id);
 			} else {
 				$value = $this->Event_model->insertData($insertArr);
 			}
-
 
 			if ($value) {
 				redirect(base_url('event'));

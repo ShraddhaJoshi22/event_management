@@ -9,30 +9,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<title>Event Manage</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" /> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/resources/demos/style.css">
-
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
-	</script> -->
-
-
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -55,17 +41,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<h1>Add Event</h1>
 		<?php } ?>
 
-
 		<div id="body">
-
 			<?php if (isset($eventDetails) && !empty($eventDetails)) { ?>
 				<form action="<?php echo base_url() . "event/save/" . $eventDetails->id; ?>" method="POST" name="eventForm" id="eventForm">
 				<?php } else { ?>
 					<form action="<?php echo base_url() . "event/save"; ?>" method="POST" name="eventForm" id="eventForm">
 					<?php } ?>
 
-					<?php //echo form_open('form'); 
-					?>
 					<div class="form-group">
 						<label for="title">Event Title</label>
 						<input type="text" class="form-control col-md-6" id="title" name="title" value="<?php echo (isset($eventDetails) && !empty($eventDetails)) ? $eventDetails->title : set_value('title'); ?>" placeholder="Event Title">
@@ -139,21 +121,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</select>
 					</div>
 
-
 					<br />
 					<input type="submit" class="btn btn-primary" value="Submit" />
-
 					<a href="<?php echo base_url() . 'event'; ?>" class="btn btn-primary" role="button" aria-pressed="true">Cancel</a>
-
-					<?php //echo form_close(); 
-					?>
 					</form>
-
 		</div>
-
-
 	</div>
-
 
 	<script>
 		$(function() {
@@ -162,22 +135,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			});
 		});
 		$(document).ready(function() {
-			// $(".datepicker").datepicker({
-			// 	clearBtn: true,
-			// 	format: "dd/mm/yyyy",
-			// 	autoclose: true,
-			// });
-
-			// $(".datepicker").on("change", function() {
-			// 	let pickedDate = $("input").val();
-			// 	$("#showdate").text(
-			// 		`You picked this ${pickedDate} Date`);
-			// });
-
-			// $(".datepicker").datepicker();
-
 			$("#eventForm").validate({
-				// Specify validation rules
 				rules: {
 					title: {
 						required: true,
@@ -193,9 +151,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						required: true
 					}
 				},
-				// Specify validation error messages
 				messages: {
-
 					title: {
 						required: "Please provide a title",
 						minlength: "Your title must be at least 5 characters long"
@@ -209,8 +165,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					error.insertAfter(element);
 
 				},
-				// Make sure the form is submitted to the destination defined
-				// in the "action" attribute of the form when valid
 				submitHandler: function(form) {
 					form.submit();
 				}
