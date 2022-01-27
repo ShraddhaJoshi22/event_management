@@ -11,8 +11,13 @@ you creatively focus on your project by minimizing the amount of code needed
 for a given task.
 
 ###################
-Project URL
+Event Management
 ###################
+Database:
+Create database with "event_management" name
+Import sql file from event_management/database folder
+
+Project URL: Please run below url from localhost to run project
 http://localhost/event_management/event
 
 List Event:
