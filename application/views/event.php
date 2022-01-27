@@ -16,8 +16,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 	<style type="text/css">
-
-
 	</style>
 </head>
 
@@ -25,7 +23,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<div id="container">
 		<h1>Event List</h1>
-		<!-- <button type="button" class="btn btn-primary"> Add Event</button> -->
 		<a href="<?php echo base_url() . 'event/manage'; ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Event</a>
 
 		<div id="body">
@@ -112,7 +109,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								?>
 								<td><?php echo $finalStr; ?></td>
 								<td>
-									<a href="<?php echo base_url() . 'event/view'; ?>" class="btn btn-primary" role="button" aria-pressed="true">View</a>
+									<a href="<?php echo base_url() . 'event/view/' . $value->id; ?>" class="btn btn-primary" role="button" aria-pressed="true">View</a>
 									<a href="<?php echo base_url() . 'event/manage/' . $value->id; ?>" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
 									<a href="<?php echo base_url() . 'event/delete/' . $value->id; ?>" class="btn btn-primary" role="button" aria-pressed="true">Delete</a>
 
@@ -122,18 +119,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php $no++;
 						}
 					} ?>
-					<!-- <tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Larry</td>
-						<td>the Bird</td>
-						<td>@twitter</td>
-					</tr> -->
+
 				</tbody>
 			</table>
 		</div>

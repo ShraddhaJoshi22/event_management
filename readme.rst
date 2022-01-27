@@ -31,7 +31,8 @@ Add Event:
 Edit Event:
 ![img3](https://user-images.githubusercontent.com/98464203/151329743-9e284b73-bcf3-407b-b531-ceb4177604bf.png)
 
-
+View Event:
+![img4](https://user-images.githubusercontent.com/98464203/151353010-088b5e72-8d68-4ee2-9a62-dc6f4e93859c.png)
 
 *******************
 Release Information

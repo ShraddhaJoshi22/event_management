@@ -71,4 +71,12 @@ class Event extends CI_Controller
 			redirect(base_url('event'));
 		}
 	}
+
+	public function view($id)
+	{
+		if (!empty($id)) {
+			$data['eventDetails'] = $this->Event_model->getData(array('id' => $id), true);
+		}
+		$this->load->view('event_detail', $data);
+	}
 }
