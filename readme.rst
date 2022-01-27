@@ -15,6 +15,8 @@ Event Management
 ###################
 Database:
 Create database with "event_management" name
+
+Import sql file:
 Import sql file from event_management/database folder
 
 Project URL: Please run below url from localhost to run project
